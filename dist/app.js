@@ -19698,15 +19698,89 @@ var React = require('react'),
 
 var app = function app() {
 
+	var HomeView = React.createClass({
+		displayName: 'HomeView',
+
+		render: function render() {
+			return React.createElement('div', { id: 'wrapper', __self: this
+			}, React.createElement(Header, {
+				__self: this
+			}), React.createElement(Content, {
+				__self: this
+			}), React.createElement(Sticky, {
+				__self: this
+			}));
+		}
+	});
+
 	var Header = React.createClass({
 		displayName: 'Header',
 
 		render: function render() {
-			return React.createElement('h1', null, 'YOLO');
+			return React.createElement('div', { id: 'header', __self: this
+			}, React.createElement('img', { id: 'hero-img', src: 'http://magentanova.github.io/html-intro-1/images/houston.jpg', __self: this
+			}), React.createElement('img', { id: 'logo', src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+			}));
 		}
 	});
 
-	ReactDOM.render(React.createElement(Header, null), document.querySelector('.container'));
+	var Content = React.createClass({
+		displayName: 'Content',
+
+		render: function render() {
+			return React.createElement('div', { id: 'content', __self: this
+			}, React.createElement('div', { id: 'leftCol', __self: this
+			}, React.createElement('h3', {
+				__self: this
+			}, ' The Iron Yard | Houston '), React.createElement('p', {
+				__self: this
+			}, ' Happenings and updates from The Iron Yard in Houston, TX '), React.createElement('hr', {
+				__self: this
+			}), React.createElement('p', {
+				__self: this
+			}, ' SEARCH '), React.createElement('input', { type: 'text', name: 'search', placeholder: 'Search Keywords', __self: this
+			})), React.createElement('div', { id: 'rightCol', __self: this
+			}, React.createElement('h2', {
+				__self: this
+			}, ' September 22 Starts a New Class of The Iron Yard Houston Students '), React.createElement('p', {
+				__self: this
+			}, ' By Brian Dorton, Campus Director at The Iron Yard Houston '), React.createElement('img', { src: 'http://magentanova.github.io/html-intro-1/images/classroom.jpg', __self: this
+			}), React.createElement('p', {
+				__self: this
+			}, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas reiciendis natus architecto nostrum aperiam repudiandae possimus a delectus expedita atque commodi aliquam corrupti voluptas nemo voluptate vero minus, voluptatibus fugiat.')));
+		}
+	});
+
+	var Sticky = React.createClass({
+		displayName: 'Sticky',
+
+		render: function render() {
+			return React.createElement('div', { id: 'sticky-box', __self: this
+			}, React.createElement('div', { id: 'sticky-title', __self: this
+			}, React.createElement('strong', {
+				__self: this
+			}, ' Never miss a post!'), ' ', React.createElement('hr', {
+				__self: this
+			})), React.createElement('div', { id: 'twitter', __self: this
+			}, React.createElement('div', { id: 'stick-logo', __self: this
+			}, React.createElement('img', { src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+			})), React.createElement('div', { id: 'twitter-account', __self: this
+			}, React.createElement('p', {
+				__self: this
+			}, React.createElement('strong', {
+				__self: this
+			}, 'tiyhouston'), React.createElement('br', {
+				__self: this
+			}), React.createElement('span', { id: 'sticky-name', __self: this
+			}, 'The Iron Yard | Houston '))), React.createElement('div', { id: 'twitter-button', __self: this
+			}, React.createElement('a', { href: 'https://twitter.com/TheIronYard', 'class': 'twitter-follow-button', 'data-show-count': 'false', 'data-show-screen-name': 'false', __self: this
+			}, 'Follow @TheIronYard'))));
+		}
+	});
+
+	ReactDOM.render(React.createElement(HomeView, {
+		__self: this
+	}), document.querySelector('.container'));
 };
 
 app();
